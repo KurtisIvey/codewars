@@ -46,4 +46,4 @@ function printerError(s) {
   return `${errors}/${s.length}`;
 }
 
-console.log(printerError("aaabbbbhaijjjm"));
+console.log(printerError("aaabbbbhaijjjmz"));
