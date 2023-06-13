@@ -18,12 +18,12 @@ is_prime(-1) false
 /*
 
 take num
-run through if checks that contain values that we'll divide by 2, 3, 5, 7
+handle less than or equal to 1 to return false
+2 & 3 are prime, so need to handle those
+afterwards, use for loops and take sqrt of num to increment the nums up to the sqrt to find %===0
+  if === 0, return false
 
-divide by % operator,
-    if 0, not prime
-    if reach return false statement, is prime
-
+  return true if reach bottom of function
 */
 
 function isPrime(num) {
