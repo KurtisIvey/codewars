@@ -16,7 +16,7 @@ pseudocode
     use for loop, when we detect a non matching char due to capitilization,
         var =+ ` ${char[i]}`
 
-    return new var;
+    return new var;11
 */
 
 function breakCamelCase(string) {
