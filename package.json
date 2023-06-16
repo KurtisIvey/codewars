@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./6kyu/digitalRoot.js"
+    "dev": "nodemon ./7kyu/xo.js"
   },
   "repository": {
     "type": "git",
