@@ -36,3 +36,17 @@ function digitalRoot(n) {
   // forces digital root to be called again until the number is < 10
   return digitalRoot(sum);
 }
+
+// digital root with reduce
+
+function digitalRootReduce(number) {
+  // Convert the number to a string and split it into an array of characters
+  const digits = String(number).split("");
+
+  // Use the reduce method to iteratively sum the digits until a single-digit number is obtained
+  const result = digits.reduce((sum, digit) => sum + Number(digit), 0);
+
+  // If the result is greater than 9, recursively call the digitalRoot function with the result
+  // This ensures that the final result is a single-digit number
+  return result > 9 ? digitalRoot(result) : result;
+}
