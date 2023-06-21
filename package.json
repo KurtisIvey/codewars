@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./8kyu/whatsTheRealFloor.js"
+    "dev": "nodemon ./7kyu/oddOrEven.js"
   },
   "repository": {
     "type": "git",
