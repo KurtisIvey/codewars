@@ -17,3 +17,21 @@ function greet(name) {
   if (name === "Johnny") return "Hello, my love!";
   return "Hello, " + name + "!";
 }
+
+
+/*
+slim solution
+function greet(name){
+  return (name==="Johnny"? "Hello, my love!": "Hello, " + name + "!")
+
+}
+
+*/
+
+/*
+slimmer
+function greet(name){
+  return (name==="Johnny"? "Hello, my love!": `Hello, ${name}!`)
+}
+
+*/

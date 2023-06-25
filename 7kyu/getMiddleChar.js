@@ -24,3 +24,9 @@ The middle character(s) of the word represented as a string.
     recieve string, if even , use slice to return 2 middle chars
     else{ return first char of slice(string / 2)}
 */
+
+function getMiddle(s)
+{
+  if(s.length % 2 === 0) return s[s.length / 2 - 1] + s[s.length / 2]
+  return s.slice(s.length/2)[0]
+}

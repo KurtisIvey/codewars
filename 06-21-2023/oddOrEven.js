@@ -24,8 +24,7 @@ pseudoCode:
 */
 
 function oddOrEven(array) {
-  if (array.length === 0) return "even";
-  if (array.length === 1 && array[0] === 0) return "even";
+
   const sum = array.reduce((acc, curr) => {
     return acc + curr;
   }, 0);
