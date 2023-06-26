@@ -36,18 +36,34 @@ for loop loops through arrays and not items within array
 
 return distance
 */
-
 function chooseBestSum(t, k, ls) {
-  let output = 0;
-  for (let i = 0; i < ls.length; i++) {
-    if (ls[i].length <= k) {
-      let sum = ls[i].reduce((acc, curr) => {
-        return acc + curr;
-      }, 0);
-      if (sum > output) {
-        output = sum;
+  let result = null; // Variable to store the largest sum found
+
+  // Recursive function to generate combinations of distances
+  function generateCombinations(index, count, sum) {
+    // Base case: If count reaches k (number of towns selected)
+    if (count === k) {
+      // Check if the sum is within the limit t and update the result if it's larger
+      if (sum <= t && (result === null || sum > result)) {
+        result = sum;
       }
+      return;
     }
+
+    // Base case: If all distances have been considered (index reaches the length of ls array)
+    if (index === ls.length) {
+      return;
+    }
+
+    // Recursive calls to generate combinations
+    // Include the distance at the current index
+    generateCombinations(index + 1, count + 1, sum + ls[index]);
+    // Exclude the distance at the current index
+    generateCombinations(index + 1, count, sum);
   }
-  return output;
+
+  // Initial call to generateCombinations with initial parameters
+  generateCombinations(0, 0, 0);
+
+  return result; // Return the largest sum found
 }
