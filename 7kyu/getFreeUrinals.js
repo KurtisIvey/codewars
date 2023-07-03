@@ -22,6 +22,7 @@ Examples
 */
 
 function getFreeUrinals(urinals) {
+  // check for violation
   if (urinals.includes("11")) return -1;
   let maxFreeUrinals = 0;
   let i = 0;
