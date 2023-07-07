@@ -23,3 +23,10 @@ function slope(points) {
   let y = d - b;
   return x === 0 ? "undefined" : String(y / x);
 }
+
+// further optimized:
+// array destructuring from the beginning
+function slope([x1, y1, x2, y2]) {
+  let slope = (y2 - y1) / (x2 - x1);
+  return Number.isFinite(slope) ? `${slope}` : "undefined";
+}
