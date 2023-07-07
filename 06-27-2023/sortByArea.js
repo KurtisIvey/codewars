@@ -15,23 +15,29 @@ pseudocode
     return array.sort with custom sort alg
 */
 function sortByArea(array) {
-  let output = [];
+  // Helper function to calculate the area of a rectangle
+  function calculateRectangleArea(dimensions) {
+    return dimensions[0] * dimensions[1];
+  }
 
-  function circleArea(radius) {
+  // Helper function to calculate the area of a circle
+  function calculateCircleArea(radius) {
     return Math.PI * Math.pow(radius, 2);
   }
 
-  for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      let sum = array[i].reduce((acc, curr) => {
-        return acc * curr;
-      }, 1);
-      output.push(sum);
-    } else {
-      let area = circleArea(array[i]);
-      output.push(area);
-    }
-  }
+  // Create an array of objects containing the shape, area, and original index
+  const areas = array.map((shape, index) => {
+    const area = Array.isArray(shape)
+      ? calculateRectangleArea(shape)
+      : calculateCircleArea(shape);
+    return { shape, area, index };
+  });
 
-  return output;
+  // Sort the areas array based on the area value
+  areas.sort((a, b) => a.area - b.area);
+
+  // Create a new array to hold the sorted shapes
+  const sortedArray = areas.map((item) => item.shape);
+
+  return sortedArray;
 }

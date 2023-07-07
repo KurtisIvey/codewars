@@ -5,8 +5,6 @@ The returned value must be a string, and have "***" between each of its letters.
 
 You should not remove or add elements from/to the array.
 
-pseudocode:
-
 */
 
 // dumb fancy solution
@@ -24,4 +22,11 @@ function twoSort(s) {
   });
 
   return sorted[0].split("").join("***");
+}
+
+// better solution...after seeing solutions
+
+function twoSort(s) {
+  s.sort();
+  return s[0].split("").join("***");
 }
