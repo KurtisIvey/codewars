@@ -20,12 +20,14 @@ return output array
 */
 
 function smaller(nums) {
+  let count;
   let output = [];
   for (let i = 0; i < nums.length; i++) {
-    let count = 0;
-    for (let j = 0; j < nums.length; j++) {
+    count = 0;
+    // starts at i+1 because only want nums to the right
+    for (let j = i + 1; j < nums.length; j++) {
       if (nums[j] < nums[i]) {
-        count += 1;
+        count++;
       }
     }
     output.push(count);

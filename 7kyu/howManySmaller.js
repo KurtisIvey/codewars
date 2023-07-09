@@ -20,17 +20,17 @@ return output array
 */
 
 function smaller(nums) {
-  const len = nums.length;
-  const counts = Array(len).fill(0); // Initialize an array to store the counts
-
-  // Iterate through each element
-  for (let i = 0; i < len; i++) {
-    for (let j = i + 1; j < len; j++) {
+  let count;
+  let output = [];
+  for (let i = 0; i < nums.length; i++) {
+    count = 0;
+    // starts at i+1 because only want nums to the right
+    for (let j = i + 1; j < nums.length; j++) {
       if (nums[j] < nums[i]) {
-        counts[i]++; // Increment the count if nums[j] is smaller than nums[i]
+        count++;
       }
     }
+    output.push(count);
   }
-
-  return counts;
+  return output;
 }
