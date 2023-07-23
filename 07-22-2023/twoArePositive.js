@@ -13,9 +13,9 @@ ep:
 */
 
 function twoArePositive(a, b, c) {
-  const positiveCount = [a, b, c];
-  const length = positiveCount.filter((num) => num > 0).length;
+  // can actually pass in ...arguments directly
+  const positiveCount = [...arguments].filter((num) => num > 0).length;
 
   // Check if exactly two integers are positive
-  return length === 2;
+  return positiveCount === 2;
 }
